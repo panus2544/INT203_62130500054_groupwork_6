@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+
+    <div id="app" class="w-full h-screen bg-gray-200 ">
+        
+        <div class="flex flex-row items-center justify-center p-3 bg-green-300">
+            <div class="flex flex-col items-center">
+                <i class="fas fa-users">panus2544</i>
+                <p class="px-3 text-xl font-semibold tracking-wider uppercase">{{title}}</p>
+                <a :href="url">Please click here.</a>
+            </div>
+        </div>
+        
+    </div>
+    <!-- <my-button @whenclick="changeTitleText"></my-button> -->
+
+    <!-- my main.js -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>
