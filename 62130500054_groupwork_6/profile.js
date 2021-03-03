@@ -1,12 +1,15 @@
 const constraints = {
   firstName: {
     presence: { message: " is required" },
+    length: { minimun: 1 },
   },
   lastName: {
     presence: { message: " is required" },
+    length: { minimun: 1 },
   },
   description: {
     presence: { message: " is required" },
+    length: { minimun: 1 },
   },
 };
 
@@ -20,7 +23,7 @@ let app = Vue.createApp({
       follower: 1000,
       rating: 999,
       description: null,
-      errors: null,
+      errors: "",
     };
   },
   methods: {
@@ -28,17 +31,15 @@ let app = Vue.createApp({
       this.firstName = null;
       this.lastName = null;
       this.description = null;
+      this.errors = "";
     },
     checkForm() {
-      this.errors = validate(
-        {
-          firstName: this.firstName,
-          lastName: this.lastName,
-          description: this.description,
-        },
-        constraints
-      );
-      console.log(this.errors);
+      let condition = {
+        firstName: this.firstName,
+        lastName: this.lastName,
+        description: this.description,
+      };
+      this.errors = validate(condition, constraints);
 
       if (!this.errors) {
         Swal.fire(
@@ -49,9 +50,7 @@ let app = Vue.createApp({
       }
     },
   },
-  computed: {
-    
-  },
+  computed: {},
 });
 
 // app.component('my-button', {
